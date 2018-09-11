@@ -7,6 +7,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+/**
+ * TODO class details.
+ *
+ * @author Loïc Ortola on 10/09/2018
+ */
 @Controller
 public class UsersController {
 
@@ -43,16 +48,4 @@ public class UsersController {
     return "redirect:/users";
   }
 
-  @GetMapping("/event")
-  public String addEvent(Model model) {
-    return "add_event";
-  }
-
-    @GetMapping("/promotion")
-    public String addPromotion(Model model) {
-      return "add_promotion";
-    }
-  }
-
-
-
+}
