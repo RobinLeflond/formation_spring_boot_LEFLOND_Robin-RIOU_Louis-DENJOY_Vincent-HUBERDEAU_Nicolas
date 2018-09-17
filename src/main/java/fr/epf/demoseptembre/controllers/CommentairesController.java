@@ -34,13 +34,14 @@ public class CommentairesController {
 
     @GetMapping("/commentaire")
     public String getCommentaire(Model model) {
-        return "add_commentaire";
+        model.addAttribute("data", commentaireDao.findAll());
+        return "commentaires-list";
     }
 
 
-    /*@PostMapping("/commentaire")
+    @PostMapping("/commentaire")
     public String addCommentaire(Commentaire commentaire, Model model) {
         commentaireDao.save(commentaire);
         return "redirect:/commentaires";
-    }*/
+    }
 }

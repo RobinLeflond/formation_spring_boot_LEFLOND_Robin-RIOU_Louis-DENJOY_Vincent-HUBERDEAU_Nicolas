@@ -48,15 +48,13 @@ public class UsersController {
     return "redirect:/users";
   }
 
-  @GetMapping("add_event")
+  @GetMapping("/event")
   public String addEvent(Model model) {
-    model.addAttribute("user", new User());
     return "add_event";
   }
 
-    @GetMapping("add_promotion")
+    @GetMapping("/promotion")
     public String addPromotion(Model model) {
-      model.addAttribute("user", new User());
       return "add_promotion";
     }
   }
