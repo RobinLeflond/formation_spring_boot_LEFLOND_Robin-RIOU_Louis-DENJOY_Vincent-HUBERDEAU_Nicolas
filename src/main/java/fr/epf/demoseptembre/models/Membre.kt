@@ -11,6 +11,7 @@ import javax.persistence.Id
  * @author Loïc Ortola on 10/09/2018
  */
 @Entity
-data class Membre(@Id @GeneratedValue var id: Int? =  null, var id_auteur: Int? =  null, var note: Int? =  null, var avis: String? = null, var id_escape_game: Int? =  null) {
+data class Membre(@Id @GeneratedValue var id: Int? =  null, var pseudo: String? = null, var mdp: String?= null) {
 
 }
+

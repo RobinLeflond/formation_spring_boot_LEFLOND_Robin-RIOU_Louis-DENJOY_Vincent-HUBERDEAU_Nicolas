@@ -1,6 +1,8 @@
 package fr.epf.demoseptembre;
 
+import fr.epf.demoseptembre.models.Membre;
 import fr.epf.demoseptembre.models.User;
+import fr.epf.demoseptembre.persistence.MembreDao;
 import fr.epf.demoseptembre.persistence.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -15,6 +17,7 @@ public class DemoSeptembreApplication {
   
   @Autowired
   private UserDao userDao;
+  private MembreDao membreDao;
   
   public static void main(String[] args) {
     // Point d'entrée de l'application.
@@ -35,5 +38,7 @@ public class DemoSeptembreApplication {
     userDao.save(new User(null,"Loic", "Ortola"));
     userDao.save(new User(null, "Ambroise", "Soullier"));
     userDao.save(new User(null, "Harry", "Covert"));
+    membreDao.deleteAll();
+    membreDao.save(new Membre(null, "Pseudo1", "123"));
   }
 }

@@ -1,7 +1,7 @@
 package fr.epf.demoseptembre.persistence;
 
 import fr.epf.demoseptembre.models.Membre;
-import fr.epf.demoseptembre.models.User;
+
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,3 +14,4 @@ import org.springframework.stereotype.Repository;
 public interface MembreDao extends CrudRepository<Membre, Integer> {
 
 }
+
