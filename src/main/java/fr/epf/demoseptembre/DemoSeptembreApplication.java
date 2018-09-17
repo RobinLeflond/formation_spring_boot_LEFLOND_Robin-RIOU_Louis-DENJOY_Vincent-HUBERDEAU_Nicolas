@@ -38,7 +38,5 @@ public class DemoSeptembreApplication {
     userDao.save(new User(null,"Loic", "Ortola"));
     userDao.save(new User(null, "Ambroise", "Soullier"));
     userDao.save(new User(null, "Harry", "Covert"));
-    membreDao.deleteAll();
-    membreDao.save(new Membre(null, "Pseudo1", "123"));
   }
 }
