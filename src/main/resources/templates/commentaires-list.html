@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:td="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+
+    <tr>
+        <th>
+            id
+        </th>
+        <th>Avis</th>
+        <th>Note</th>
+    </tr>
+    <tr th:each="commentaire : ${data}">
+        <td th:text="${commentaire.id}"></td>
+        <td th:text="${commentaire.avis}"></td>
+        <td th:text="${commentaire.note}"></td>
+    </tr>
+</table>
+</body>
+</html>
