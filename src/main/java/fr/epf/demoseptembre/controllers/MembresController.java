@@ -32,17 +32,17 @@ public class MembresController {
      * @return
      */
 
-    @GetMapping("/connect")
+    @GetMapping("/new_user")
     public String getMembre(Model model) {
         model.addAttribute("membre", new Membre());
         model.addAttribute("data", membreDao.findAll());
-        return "connection";
+        return "inscription";
     }
 
 
-    @PostMapping("/connect")
+    @PostMapping("/new_user")
     public String addMembre(Membre membre, Model model) {
         membreDao.save(membre);
-        return "redirect:/connect";
+        return "redirect:/new_user";
     }
 }
