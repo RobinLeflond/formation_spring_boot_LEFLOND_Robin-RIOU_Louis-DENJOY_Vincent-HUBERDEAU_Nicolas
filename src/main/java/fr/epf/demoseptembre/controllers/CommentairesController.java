@@ -35,6 +35,7 @@ public class CommentairesController {
     @GetMapping("/commentaire")
     public String getCommentaire(Model model) {
         model.addAttribute("commentaire", new Commentaire());
+        model.addAttribute("data", commentaireDao.findAll());
         return "add_commentaire";
     }
 
@@ -42,12 +43,6 @@ public class CommentairesController {
     @PostMapping("/commentaire")
     public String addCommentaire(Commentaire commentaire, Model model) {
         commentaireDao.save(commentaire);
-        return "redirect:/commentaires";
-    }
-
-    @GetMapping("/commentaires")
-    public  String getUsers (Model model) {
-        model.addAttribute("data", commentaireDao.findAll());
-        return "commentaires-list";
+        return "redirect:/commentaire";
     }
 }

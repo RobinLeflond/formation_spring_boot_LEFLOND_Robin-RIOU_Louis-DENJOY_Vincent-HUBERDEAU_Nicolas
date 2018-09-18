@@ -7,7 +7,6 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>When Is My Code Review?</title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -16,17 +15,35 @@
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-          type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
 </head>
 
 <body>
+
 <div id="wrapper">
 
     <div id="page-wrapper" class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Connexion</h1>
+                <h2>
+
+                    <table>
+
+                    <tr>
+                        <th>id</th>
+                        <th>Pseudo</th>
+                        <th>Mot de passe</th>
+                    </tr>
+                    <tr th:each="membre : ${data}">
+                        <td th:text="${membre.id}"></td>
+                        <td th:text="${membre.pseudo}"></td>
+                        <td th:text="${membre.mdp}"></td>
+                    </tr>
+                </table>
+
+                </h2>
             </div>
             <!-- /.col-lg-12 -->
         </div>
@@ -38,21 +55,25 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-12">
-<!--                                <form action="#" th:action="@{/connection}" th:object="${connection}" method="post">
+                                <form action="#" method="post" class="">
+
                                     <div class="form-group">
                                         <label for="pseudo">Pseudo</label>
                                         <input type="text" class="input-lg form-control" id="pseudo"
-                                               th:field="*{pseudo}" placeholder="Pseudo">
+                                               th:field="*{membre.pseudo}" placeholder="pseudo">
+
                                     </div>
                                     <div class="form-group">
-                                        <label for="mdp">Mdp</label>
-                                        <input type="text" id="mdp" class="input-lg form-control"
-                                               th:field="*{mdp}" placeholder="Mdp">
+                                        <label for="mdp">Mot de passe</label>
+                                        <input type="text" class="input-lg form-control" id="mdp"
+                                               th:field="*{membre.mdp}" placeholder="mdp">
                                     </div>
+
+
                                     <div class="text-right">
-                                        <button type="submit" class="btn btn-lg btn-primary">Connecter</button>
+                                        <button type="submit" class="btn btn-lg btn-primary">Envoyer le membre</button>
                                     </div>
-                                </form>-->
+                                </form>
                             </div>
                         </div>
                         <!-- /.row -->
@@ -72,7 +93,7 @@
 <footer class="footer">
     <div class="container">
         <div class="row text-center">
-            <img src="../img/logo_takima_horizontal_inverted.png" class="logo" alt=""> &bullet; 2017
+            <img src="../img/ebusiness.png" class="logo" alt=""> &bullet; 2018
         </div>
     </div>
 </footer>
