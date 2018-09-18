@@ -11,7 +11,7 @@ import javax.persistence.Id
  * @author Loïc Ortola on 10/09/2018
  */
 @Entity
-data class Membre(@Id @GeneratedValue var id: Int? =  null, var mdp: String?= null, var pseudo: String? = null) {
+data class Membre(@Id @GeneratedValue var id: Int? =  null, var pseudo: String? = null, var mdp: String?= null) {
 
 }
 

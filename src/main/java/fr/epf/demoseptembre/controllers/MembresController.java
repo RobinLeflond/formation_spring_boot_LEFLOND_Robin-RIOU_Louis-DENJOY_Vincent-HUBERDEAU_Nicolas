@@ -7,11 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-/**
- * TODO class details.
- *
- * @author Loïc Ortola on 10/09/2018
- */
+
 @Controller
 public class MembresController {
 
@@ -27,22 +23,22 @@ public class MembresController {
      * Il lui fournira un "modèle", auquel on pourra rajouter des attributs.
      * Ce modèle sera ensuite forwardé à une page web (dans resources/templates).
      * Le nom de la template est retourné par la fonction. Ici, elle appelle donc le template "membres".
+<<<<<<< Updated upstream
      *
      * @param model le modèle
      * @return
      */
 
-    @GetMapping("/new_user")
+    @GetMapping("/membre")
     public String getMembre(Model model) {
-        model.addAttribute("membre", new Membre());
         model.addAttribute("data", membreDao.findAll());
-        return "inscription";
+        return "membres-list";
     }
 
 
-    @PostMapping("/new_user")
+    @PostMapping("/membre")
     public String addMembre(Membre membre, Model model) {
         membreDao.save(membre);
-        return "redirect:/new_user";
+        return "redirect:/membres";
     }
 }
