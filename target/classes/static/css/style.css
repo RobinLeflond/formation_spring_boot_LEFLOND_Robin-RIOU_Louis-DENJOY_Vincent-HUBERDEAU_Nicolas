@@ -17,6 +17,11 @@ body {
       height: 90px; }
   body .navbar {
     height: 50px; }
+	body .navbar .navbar-brand {
+	font-size: 22px; }
+	body .navbar button.navbar-button {
+	height: 90%; 
+	margin: 2px; }
     body .navbar ul.navbar-top-links {
       height: 100%; }
       body .navbar ul.navbar-top-links li.dropdown {
@@ -31,6 +36,8 @@ body {
             width: 100%; }
             body .navbar ul.navbar-top-links li.dropdown .dropdown-user li a {
               line-height: 35px; }
+  body .img {
+  margin-bottom: 10px; }
   body .huge {
     font-size: 3em;
     line-height: 1.2em; }

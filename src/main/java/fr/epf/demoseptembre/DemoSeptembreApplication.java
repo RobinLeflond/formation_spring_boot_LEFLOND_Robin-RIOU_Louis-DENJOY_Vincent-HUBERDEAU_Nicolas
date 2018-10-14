@@ -1,9 +1,7 @@
 package fr.epf.demoseptembre;
 
-import fr.epf.demoseptembre.models.Membre;
-import fr.epf.demoseptembre.models.User;
-import fr.epf.demoseptembre.persistence.MembreDao;
-import fr.epf.demoseptembre.persistence.UserDao;
+import fr.epf.demoseptembre.models.EscapeGame;
+import fr.epf.demoseptembre.persistence.EscapeGameDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -16,9 +14,8 @@ import javax.annotation.PostConstruct;
 public class DemoSeptembreApplication {
   
   @Autowired
-  private UserDao userDao;
-  private MembreDao membreDao;
-  
+  private EscapeGameDao escapeGameDao;
+
   public static void main(String[] args) {
     // Point d'entrée de l'application.
     // On dit à Spring de s'initialiser
@@ -34,9 +31,13 @@ public class DemoSeptembreApplication {
    */
   @PostConstruct
   public void init() {
-    userDao.deleteAll();
-    userDao.save(new User(null,"Loic", "Ortola"));
-    userDao.save(new User(null, "Ambroise", "Soullier"));
-    userDao.save(new User(null, "Harry", "Covert"));
+    escapeGameDao.deleteAll();
+    escapeGameDao.save(new EscapeGame(1,"Boby91", "Le monde des sorciers", "Périple à Poudlard", null, "Harry Potter", 0, "01/01/2000"));
+    escapeGameDao.save(new EscapeGame(2,"Boby91", "Le monde des sorciers", "Périple à Poudlard", null, "Harry Potter", 0, "01/01/2000"));
+    escapeGameDao.save(new EscapeGame(3,"Boby91", "Le monde des sorciers", "Périple à Poudlard", null, "Harry Potter", 0, "01/01/2000"));
+    escapeGameDao.save(new EscapeGame(4,"Boby91", "Le monde des sorciers", "Périple à Poudlard", null, "Harry Potter", 0, "01/01/2000"));
+    escapeGameDao.save(new EscapeGame(5,"Boby91", "Le monde des sorciers", "Périple à Poudlard", null, "Harry Potter", 0, "01/01/2000"));
+
+
   }
 }

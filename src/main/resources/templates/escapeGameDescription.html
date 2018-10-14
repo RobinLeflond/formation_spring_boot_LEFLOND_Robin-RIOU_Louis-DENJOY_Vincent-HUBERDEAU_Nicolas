@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Classement des meilleurs escape games">
+    <meta name="author" content="Les Kassos">
+
+    <title>Echappez-vous !</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+<div id="wrapper">
+
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-8">
+                <!-- /.panel -->
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <i class="fa fa-sort-amount-desc fa-fw"></i> Classement des meilleurs d'escape games
+                    </div>
+                    <!-- /.panel-heading -->
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="table-responsive">
+                                    <table class="table table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th>Nom</th>
+                                            <th>Thème</th>
+                                            <th>Créateur</th>
+                                            <th class="text-center">description</th>
+                                            <th class="text-right">Note</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                <td th:text="${escapeGame.nom}"></td>
+                                                <td th:text="${escapeGame.theme}"></td>
+                                                <td th:text="${escapeGame.createur}"></td>
+                                                <td th:text="${escapeGame.description}"></td>
+                                                <td th:text="${escapeGame.note}"></td>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.table-responsive -->
+                            </div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-8 -->
+        </div>
+</div>
+</div>
+</body>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row text-center">
+            <a href="/">
+                <button> Revenir à l'accueil</button>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="../js/jquery-3.1.1.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="../js/bootstrap.min.js"></script>
+
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+
+    <tr>
+        <th>Id</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Theme</th>
+        <th>Note</th>
+
+    </tr>
+    <tr th:each="escapeGame : ${data}">
+        <td th:text="${escapeGame.id}"></td>
+        <td th:text="${escapeGame.nom}"></td>
+        <td th:text="${escapeGame.description}"></td>
+        <td th:text="${escapeGame.theme}"></td>
+        <td th:text="${escapeGame.note}"></td>
+    </tr>
+</table>
+</body>
+</html>

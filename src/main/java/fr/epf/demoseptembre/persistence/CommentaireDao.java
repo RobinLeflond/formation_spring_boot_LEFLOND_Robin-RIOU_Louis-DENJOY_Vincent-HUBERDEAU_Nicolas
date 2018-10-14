@@ -1,7 +1,6 @@
 package fr.epf.demoseptembre.persistence;
 
 import fr.epf.demoseptembre.models.Commentaire;
-import fr.epf.demoseptembre.models.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -12,5 +11,6 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface CommentaireDao extends CrudRepository<Commentaire, Integer> {
+
 
 }
