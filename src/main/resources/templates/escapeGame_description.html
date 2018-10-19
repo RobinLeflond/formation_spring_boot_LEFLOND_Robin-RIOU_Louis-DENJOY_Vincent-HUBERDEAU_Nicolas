@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Page d'inscription">
+    <meta name="description" content="Détails de l'Escape Game">
     <meta name="author" content="Robin LEFLOND Vincent DENJOY Louis RIOU Nicolas HUBERDEAU">
 
-    <title>Inscription</title>
+    <title>Détails de l'Escape Game</title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -20,17 +20,16 @@
           type="text/css">
 
 </head>
-
 <body>
-
 <div id="wrapper">
 
     <div id="page-wrapper" class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Inscription</h1>
+                <h1 class="page-header">DETAILS DE L'ESCAPE GAME</h1>
                 <img src="../img/can-you-escape-banner.png" class="img-responsive" alt="Escape game" width=100%>
             </div>
+            <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
@@ -40,24 +39,43 @@
                     <div class="panel-body">
                         <div class="row">
                             <div class="col-xs-12">
-                                <form action="#" method="post" class="">
+                                <form>
+                                    <div class="form-group">
+                                        <label>Créateur</label>
+                                        <td th:text="${escapeGame.creator}"></td>
+                                    </div>
 
                                     <div class="form-group">
-                                        <label for="pseudo">Pseudo</label>
-                                        <input type="text" class="input-lg form-control" id="pseudo"
-                                               th:field="*{member.pseudo}" placeholder="pseudo" required>
-
+                                        <label>Nom</label>
+                                        <td th:text="${escapeGame.name}"></td>
                                     </div>
+
                                     <div class="form-group">
-                                        <label for="pswd">Mot de passe</label>
-                                        <input type="password" class="input-lg form-control" id="pswd"
-                                               th:field="*{member.password}" placeholder="mdp" required>
+                                        <label>Description</label>
+                                        <td th:text="${escapeGame.description}"></td>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Thème</label>
+                                        <td th:text="${escapeGame.theme}"></td>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Date d'ouverture</label>
+                                        <td th:text="${escapeGame.opening_date}"></td>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Adresse de l'Escape Game</label>
+                                        <td th:text="${escapeGame.address}"></td>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Note</label>
+                                        <td th:text="${escapeGame.note}"></td>
                                     </div>
 
 
-                                    <div class="text-right">
-                                        <button type="submit" class="btn btn-lg btn-primary">S'inscrire</button>
-                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -70,6 +88,7 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+
         <div class="row text-center">
             <a href="/">
                 <button>Revenir à l'accueil</button>

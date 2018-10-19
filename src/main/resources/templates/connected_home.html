@@ -33,12 +33,10 @@
             </button>
             <a class="navbar-brand" href="">Echappez-vous !</a>
         </div>
+
         <!-- Boutons connexion et s'inscrire -->
-        <a href="/inscription">
-            <button type="button" class="btn navbar-button navbar-right">S'inscrire</button>
-        </a>
-        <a href="/connection">
-            <button type="button" class="btn navbar-button navbar-right">Connexion</button>
+        <a href="/deconnection">
+            <button type="button" class="btn navbar-button navbar-right">Déconnexion</button>
         </a>
 
     </nav>
@@ -69,6 +67,7 @@
                                             <th>Thème</th>
                                             <th>Créateur</th>
                                             <th class="text-center">Note</th>
+
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -80,6 +79,10 @@
                                             <td class="text-right">
                                                 <a th:href="@{/escapeGame/{id}(id=${escapeGame.id})}"
                                                    class="btn btn-sm btn-info">Voir cet EscapeGame</a>
+                                            </td>
+                                            <td class="text-right">
+                                                <a th:href="@{/commentary/{id}(id=${escapeGame.id})}"
+                                                   class="btn btn-sm btn-info">Ecrire un commentaire</a>
                                             </td>
                                         </tr>
                                         </tbody>
@@ -133,7 +136,9 @@
                         <i class="fa fa-edit fa-fw"></i> Vous voulez ajoutez votre escape game ?
                     </div>
                     <div class="panel-body">
-                        Connectez vous pour avoir accès à cette fonctionnalité
+                        <a href="/addEscapeGame">
+                            <button type="button" class="btn" href="/addEscapeGame">Créez votre escape game</button>
+                        </a>
                     </div>
                 </div>
                 <!-- /.panel -->
@@ -141,14 +146,14 @@
             <!-- /.col-lg-4 -->
         </div>
         <!-- /.row -->
-        Veuillez vous inscrire ou vous connecter pour avoir accès à la création d'Escape Game ou pour pouvoir laisser
-        des commentaires
+        Vous êtes actuellement connecté sur le compte de <span th:text="${user}"></span>, pour changer de compte
+        veuillez vous déconnecter
+
     </div>
     <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
-
 <footer class="footer">
     <div class="container">
         <div class="row text-center">

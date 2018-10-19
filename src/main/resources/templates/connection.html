@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Page de connexion">
+    <meta name="author" content="Robin LEFLOND Vincent DENJOY Louis RIOU Nicolas HUBERDEAU">
 
+    <title>Connexion</title>
 
     <!-- Bootstrap CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -15,10 +16,10 @@
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
 
 </head>
-
 <body>
 
 <div id="wrapper">
@@ -27,25 +28,8 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">Connexion</h1>
-                <h2>
-
-                    <table>
-
-                    <tr>
-                        <th>id</th>
-                        <th>Pseudo</th>
-                        <th>Mot de passe</th>
-                    </tr>
-                    <tr th:each="membre : ${data}">
-                        <td th:text="${membre.id}"></td>
-                        <td th:text="${membre.pseudo}"></td>
-                        <td th:text="${membre.mdp}"></td>
-                    </tr>
-                </table>
-
-                </h2>
+                <img src="../img/can-you-escape-banner.png" class="img-responsive" alt="Escape game" width=100%>
             </div>
-            <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
         <div class="row">
@@ -60,18 +44,20 @@
                                     <div class="form-group">
                                         <label for="pseudo">Pseudo</label>
                                         <input type="text" class="input-lg form-control" id="pseudo"
-                                               th:field="*{membre.pseudo}" placeholder="pseudo">
+                                               th:field="*{member.pseudo}" placeholder="pseudo">
 
                                     </div>
                                     <div class="form-group">
                                         <label for="mdp">Mot de passe</label>
-                                        <input type="text" class="input-lg form-control" id="mdp"
-                                               th:field="*{membre.mdp}" placeholder="mdp">
+                                        <input type="password" class="input-lg form-control" id="mdp"
+                                               th:field="*{member.password}" placeholder="mdp">
                                     </div>
 
 
                                     <div class="text-right">
-                                        <button type="submit" class="btn btn-lg btn-primary">Envoyer le membre</button>
+
+                                        <button type="submit" class="btn btn-lg btn-primary">Se connecter</button>
+
                                     </div>
                                 </form>
                             </div>
@@ -85,15 +71,23 @@
             <!-- /.col-lg-12 -->
         </div>
         <!-- /.row -->
+
+        <div class="row text-center">
+            <a href="/">
+                <button>Revenir à l'accueil</button>
+            </a>
+        </div>
+
     </div>
     <!-- /#page-wrapper -->
 
 </div>
+
 <!-- /#wrapper -->
 <footer class="footer">
     <div class="container">
         <div class="row text-center">
-            <img src="../img/ebusiness.png" class="logo" alt=""> &bullet; 2018
+            &bullet; Projet Java Spring Boot 2019 - Robin LEFLOND, Vincent DENJOY, Louis RIOU, Nicolas HUBERDEAU
         </div>
     </div>
 </footer>

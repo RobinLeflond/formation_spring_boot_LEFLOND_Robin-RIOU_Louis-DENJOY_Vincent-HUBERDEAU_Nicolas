@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Classement des meilleurs escape games">
-    <meta name="author" content="Les Kassos">
+    <meta name="description" content="Page d'accueil">
+    <meta name="author" content="Robin LEFLOND Vincent DENJOY Louis RIOU Nicolas HUBERDEAU">
 
     <title>Echappez-vous !</title>
 
@@ -16,7 +16,8 @@
     <link href="../css/style.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          type="text/css">
 </head>
 
 <body>
@@ -33,8 +34,12 @@
             <a class="navbar-brand" href="">Echappez-vous !</a>
         </div>
         <!-- Boutons connexion et s'inscrire -->
-        <a href="/new_user"> </ahref><button type="button" class="btn navbar-button navbar-right">S'inscrire</button> </a>
-        <a href="/new_user"> <button type="button" class="btn navbar-button navbar-right">Connexion</button> </a>
+        <a href="/inscription">
+            <button type="button" class="btn navbar-button navbar-right">S'inscrire</button>
+        </a>
+        <a href="/connection">
+            <button type="button" class="btn navbar-button navbar-right">Connexion</button>
+        </a>
 
     </nav>
 
@@ -50,7 +55,7 @@
                 <!-- /.panel -->
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <i class="fa fa-sort-amount-desc fa-fw"></i> Classement des meilleurs d'escape games
+                        <i class="fa fa-sort-amount-desc fa-fw"></i> Liste des meilleurs escape games
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
@@ -64,27 +69,23 @@
                                             <th>Thème</th>
                                             <th>Créateur</th>
                                             <th class="text-center">Note</th>
-                                            <th class="text-center">Afficher</th>
-                                            <th class="text-right">Commentaires</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr th:each="escapeGame : ${data}">
-                                            <td th:text="${escapeGame.nom}"></td>
+                                            <td th:text="${escapeGame.name}"></td>
                                             <td th:text="${escapeGame.theme}"></td>
-                                            <td th:text="${escapeGame.createur}"></td>
+                                            <td th:text="${escapeGame.creator}"></td>
                                             <td class="text-center" th:text="${escapeGame.note}"></td>
-                                            <td  class="text-right">
-                                                <a th:href="@{/escapeGame/{id}(id=${escapeGame.id})}" class="btn btn-sm btn-info">Voir cet EscapeGame</a>
-                                            </td>
-                                            <td  class="text-right">
-                                                <a th:href="@{/commentaire/{id}(id=${escapeGame.id})}" class="btn btn-sm btn-info">Ecrire un commentaire</a>
+                                            <td class="text-right">
+                                                <a th:href="@{/escapeGame/{id}(id=${escapeGame.id})}"
+                                                   class="btn btn-sm btn-info">Voir cet EscapeGame</a>
                                             </td>
                                         </tr>
                                         </tbody>
                                     </table>
                                     <div class="text-center">
-                                        <a th:href="commentariesList" class="btn btn-sm btn-info">Voir les commentaires</a>
+                                        <a href="commentariesList" class="btn btn-sm btn-info">Voir les commentaires</a>
                                     </div>
                                 </div>
                                 <!-- /.table-responsive -->
@@ -109,14 +110,16 @@
                                 <th>Nom</th>
                                 <th>Thème</th>
                                 <th>Créateur</th>
+                                <th>Adresse</th>
                                 <th class="text-right">Date d'ouverture</th>
                             </tr>
                             </thead>
                             <tr>
-                                <td th:text="${newEscapeGame.nom}"></td>
+                                <td th:text="${newEscapeGame.name}"></td>
                                 <td th:text="${newEscapeGame.theme}"></td>
-                                <td th:text="${newEscapeGame.createur}"></td>
-                                <td class="text-right" th:text="${newEscapeGame.date_ouverture}"></td>
+                                <td th:text="${newEscapeGame.creator}"></td>
+                                <td th:text="${newEscapeGame.address}"></td>
+                                <td class="text-right" th:text="${newEscapeGame.opening_date}"></td>
 
                             </tr>
                         </table>
@@ -130,8 +133,7 @@
                         <i class="fa fa-edit fa-fw"></i> Vous voulez ajoutez votre escape game ?
                     </div>
                     <div class="panel-body">
-                        <a href="/addEscapeGame"> <button type="button" class="btn" href="/addEscapeGame">Créez votre escape game</button>
-                        </a>
+                        Connectez vous pour avoir accès à cette fonctionnalité
                     </div>
                 </div>
                 <!-- /.panel -->
@@ -139,15 +141,18 @@
             <!-- /.col-lg-4 -->
         </div>
         <!-- /.row -->
+        Veuillez vous inscrire ou vous connecter pour avoir accès à la création d'Escape Game ou pour pouvoir laisser
+        des commentaires
     </div>
     <!-- /#page-wrapper -->
 
 </div>
 <!-- /#wrapper -->
+
 <footer class="footer">
     <div class="container">
         <div class="row text-center">
-            &bullet; 2018
+            &bullet; Projet Java Spring Boot 2019 - Robin LEFLOND, Vincent DENJOY, Louis RIOU, Nicolas HUBERDEAU
         </div>
     </div>
 </footer>

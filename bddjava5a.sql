@@ -23,10 +23,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `commentaire`
+-- Structure de la table `commentary`
 --
 
-CREATE TABLE `commentaire` (
+CREATE TABLE `commentary` (
   `id` int(11) NOT NULL,
   `id_auteur` int(11) NOT NULL,
   `avis` text NOT NULL,
@@ -68,10 +68,10 @@ INSERT INTO `hibernate_sequence` (`next_val`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `membre`
+-- Structure de la table `member`
 --
 
-CREATE TABLE `membre` (
+CREATE TABLE `member` (
   `id` int(11) NOT NULL,
   `pseudo` varchar(250) NOT NULL,
   `mdp` varchar(250) NOT NULL
@@ -104,9 +104,9 @@ INSERT INTO `user` (`id`, `first_name`, `last_name`) VALUES
 --
 
 --
--- Index pour la table `commentaire`
+-- Index pour la table `commentary`
 --
-ALTER TABLE `commentaire`
+ALTER TABLE `commentary`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -116,9 +116,9 @@ ALTER TABLE `escape_game`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `membre`
+-- Index pour la table `member`
 --
-ALTER TABLE `membre`
+ALTER TABLE `member`
   ADD PRIMARY KEY (`id`);
 
 --
